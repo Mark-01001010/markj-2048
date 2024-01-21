@@ -329,6 +329,7 @@ document.addEventListener('touchsmove',(e)=>{
 },{passive: false});
 
 document.addEventListener('touchend',(e)=>{
+    canMove = false;
     // Check if the element that triggered the event has a class name containing "tile"
     if (!e.target.className.includes("tile")) {
         return; // If not, exit the function
@@ -343,19 +344,19 @@ document.addEventListener('touchend',(e)=>{
         // Horizontal swipe
         if (diffX > 0) {
             slideLeft(); // Call a function for sliding left
-            setRandomTile();
+            canMove ? setRandomTile() : '';
         } else {
             slideRight(); // Call a function for sliding right
-            setRandomTile();
+            canMove ? setRandomTile() : '';
         }
     } else {
         // Vertical swipe
         if (diffY > 0) {
             slideUp(); // Call a function for sliding up
-            setRandomTile();
+            canMove ? setRandomTile() : '';
         } else {
             slideDown();
-            setRandomTile();
+            canMove ? setRandomTile() : '';
         }
     }
 
