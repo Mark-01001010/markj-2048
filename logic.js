@@ -136,8 +136,6 @@ function slideLeft(){
 }
 
 function slideRight(){
-	let canMove = false;
-
 	for(let r=0;r<rows;r++){
 		let row = board[r];
 		let originalRow = row.slice();
